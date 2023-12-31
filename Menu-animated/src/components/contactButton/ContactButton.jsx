@@ -1,5 +1,6 @@
 import React from 'react'
 import './style.scss'
+import { Plus } from 'react-feather'
 
 function ContactButton() {
   return (
@@ -8,7 +9,9 @@ function ContactButton() {
     
     <button className='contact-button'>
 
-        <span>Contact us</span>
+        <span>Contact us 
+          <Plus></Plus>
+        </span>
 
     </button>
     </>

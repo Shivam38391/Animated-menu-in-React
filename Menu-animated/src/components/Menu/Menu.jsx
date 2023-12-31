@@ -8,7 +8,6 @@ function Menu() {
       <div className="menu-wrapper">
         <MenuButton />
         <MenuContent />
-        Menu
       </div>
     </>
   );
