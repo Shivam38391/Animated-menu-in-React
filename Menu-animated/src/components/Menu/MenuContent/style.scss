@@ -9,7 +9,7 @@
 
         will-change: transform;
         transition: transform 1s cubic-bezier(1,0,0,1);
-        color: aliceblue;
+        color: aliceblue ;
         z-index: 10;
         transform: translateX(-100%);
 
@@ -29,11 +29,21 @@
                 a {
                     font-size: clamp(32px , 4vw , 52px);
                     line-height: 1.1em;
+
+
                     transition: transform 0.3s cubic-bezier(0.55, 0.0.55, 0.675,0.19);
+                    transform:  translate(-100%);
+
+                    color: rgb(49, 111, 165);
+
                 }
 
                 &:hover {
                     cursor: pointer;
+
+                    a {
+                        font-weight: 800;
+                    }
                     img {
                         opacity: 1;
                         transform: translateY(-50%) translateX(30px);
@@ -60,12 +70,61 @@
             }
         }
 
+
+
+        .external-nav-links {
+            margin-top: 100px;
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                margin-right: 30px;
+
+                a {
+                    transform: translate(-100%);
+                    opacity: 0;
+                    transition: all 0.3s cubic-bezier(0.55, 0.0.55, 0.675,0.19);;
+                }
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+        }
+
         img {
             display: none;
         }
 
         &.open  {
             transform: translateX(0);
+
+            .internal-nav-links {
+
+                li {
+                    a {
+                        transform: translate(0);
+                        transition-duration: 0.8s;
+                        transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+
+                    }
+                }
+
+
+                //for loop in css
+                @for $i from 0 through 4 {
+                    li:nth-child(#{$i + 1}n){
+                        a {
+                            transition-delay: $i * 0.8s;
+                        }
+                    }
+                }
+
+            }
+
+            // .external-nav-links {
+
+            // }
         }
     }
 }
