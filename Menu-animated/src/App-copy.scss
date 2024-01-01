@@ -1,3 +1,8 @@
+
+@import "./styles/_mixins.scss";
+
+
+
 .main-container {
   height: 100vh;
   display: flex;
@@ -19,9 +24,15 @@
 
   }
 
-  margin-left: 50px;
-  padding-left: 50px;
-  border-left: 1px solid rgb(116, 116, 116);
-  width: calc(100vw - 126px);
+
+
+
+  @include mq("tablet", min) {
+    margin-left: 50px;
+    padding-left: 50px;
+    border-left: 1px solid rgb(116, 116, 116);
+    width: calc(100vw - 126px); //margin, padding and border
+  }
+
 
 }

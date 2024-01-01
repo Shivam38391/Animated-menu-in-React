@@ -1,3 +1,8 @@
+@import "../../../styles/_mixins.scss";
+
+
+
+
 .menu-button-wrap {
 
     position: fixed;
@@ -65,4 +70,14 @@
             }
         }
     }
+
+
+
+
+    @include mq('tablet', max){
+        display: none;
+      }
+
+
+
 }

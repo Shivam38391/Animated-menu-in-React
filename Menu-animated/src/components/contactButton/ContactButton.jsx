@@ -1,17 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './style.scss'
 import { Plus } from 'react-feather'
+import { MenuContext } from  "../Menu/MenuManager/MenuManager"
+import cn from "classnames";
 
 function ContactButton() {
+
+  const { setOpen, open } = useContext( MenuContext );
+
   return (
  
     <>
     
-    <button className='contact-button'>
+    <button  className={cn("contact-button", { open })}
+      onClick={() => setOpen(!open)}>
 
         <span>Contact us 
-          <Plus></Plus>
         </span>
+        <Plus/>
 
     </button>
     </>
